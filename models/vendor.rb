@@ -21,4 +21,9 @@ class Vendor
     @id = result['id'].to_i
   end
 
+  def Vendor.delete_all()
+    sql = "DELETE FROM vendors"
+    SqlRunner.run (sql)
+  end
+
 end
