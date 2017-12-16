@@ -23,4 +23,9 @@ class Transaction
     @id = result['id'].to_i
   end
 
+  def Transaction.delete_all()
+    sql = "DELETE FROM transactions"
+    SqlRunner.run (sql)
+  end
+
 end
