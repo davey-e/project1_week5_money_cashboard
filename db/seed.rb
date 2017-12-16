@@ -7,22 +7,46 @@ Transaction.delete_all()
 Tag.delete_all()
 Vendor.delete_all()
 
-tag1 = Tag.new({
-  'name' => 'Clothes'
-  })
+tag1 = Tag.new({'name' => 'Clothes'})
 tag1.save()
+tag2 = Tag.new({'name' => 'Groceries'})
+tag2.save()
+tag3 = Tag.new({'name' => 'Entertainment'})
+tag3.save()
 
-vendor1 = Vendor.new({
-  'name' => 'Next'
-  })
+vendor1 = Vendor.new({'name' => 'Next'})
 vendor1.save()
+vendor2 = Vendor.new({'name' => 'Tesco'})
+vendor2.save()
+vendor3 = Vendor.new({'name' => 'Asda'})
+vendor3.save()
+vendor4 = Vendor.new({'name' => 'Coop'})
+vendor4.save()
+vendor5 = Vendor.new({'name' => 'Cineworld'})
+vendor5.save()
+vendor6 = Vendor.new({'name' => 'Vue Cinema'})
+vendor6.save()
 
-transaction1 = Transaction.new({
-  'amount' => '2000',
-  'tag_id' => tag1.id,
-  'vendor_id' => vendor1.id
-  })
-  transaction1.save()
+transaction1 = Transaction.new({'amount' => '2000','tag_id' => tag1.id,'vendor_id' => vendor1.id})
+transaction1.save()
+transaction2 = Transaction.new({'amount' => '1599','tag_id' => tag1.id,'vendor_id' => vendor1.id})
+transaction2.save()
+transaction3 = Transaction.new({'amount' => '3459','tag_id' => tag2.id,'vendor_id' => vendor2.id})
+transaction3.save()
+transaction4 = Transaction.new({'amount' => '1250','tag_id' => tag2.id,'vendor_id' => vendor2.id})
+transaction4.save()
+transaction5 = Transaction.new({'amount' => '4599','tag_id' => tag2.id,'vendor_id' => vendor3.id})
+transaction5.save()
+transaction6 = Transaction.new({'amount' => '1234','tag_id' => tag2.id,'vendor_id' => vendor3.id})
+transaction6.save()
+transaction7 = Transaction.new({'amount' => '3792','tag_id' => tag3.id,'vendor_id' => vendor5.id})
+transaction7.save()
+transaction8 = Transaction.new({'amount' => '1498','tag_id' => tag2.id,'vendor_id' => vendor4.id})
+transaction8.save()
+transaction9 = Transaction.new({'amount' => '3378','tag_id' => tag2.id,'vendor_id' => vendor2.id})
+transaction9.save()
+transaction10 = Transaction.new({'amount' => '2345','tag_id' => tag3.id,'vendor_id' => vendor6.id})
+transaction10.save()
 
 binding.pry
 nil
