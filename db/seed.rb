@@ -4,6 +4,7 @@ require_relative('../models/vendor.rb')
 require_relative('../models/transaction.rb')
 
 Transaction.delete_all()
+Tag.delete_all()
 
 tag1 = Tag.new({
   'name' => 'Clothes'
