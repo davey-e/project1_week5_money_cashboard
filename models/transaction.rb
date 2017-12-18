@@ -31,6 +31,14 @@ class Transaction
     return Tag.new(result)
   end
 
+  def vendor()
+    sql = "SELECT * FROM vendors
+    WHERE id = $1;"
+    values = [@vendor_id]
+    result = SqlRunner.run(sql, values).first()
+    return Vendor.new(result)
+  end
+
   def Transaction.all()
     sql = "SELECT * FROM transactions;"
     results = SqlRunner.run(sql)
