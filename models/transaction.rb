@@ -39,6 +39,10 @@ class Transaction
     return Vendor.new(result)
   end
 
+  def Transaction.amount_pence_to_pounds(amount)
+    return "£#{amount.to_f / 100}"
+  end
+
   def Transaction.all()
     sql = "SELECT * FROM transactions;"
     results = SqlRunner.run(sql)

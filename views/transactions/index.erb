@@ -10,10 +10,11 @@
   </thead>
   <tbody>
     <% @transactions.each do |transaction| %>
+    <% amount = Transaction.amount_pence_to_pounds(transaction.amount) %>
     <% tag = transaction.tag() %>
     <% vendor = transaction.vendor() %>
     <tr>
-      <td><%= transaction.amount %></td>
+      <td><%= amount %></td>
       <td><%= tag.name %></td>
       <td><%= vendor.name %></td>
     </tr>
