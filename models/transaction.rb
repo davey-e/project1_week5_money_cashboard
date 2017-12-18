@@ -40,7 +40,7 @@ class Transaction
   end
 
   def Transaction.amount_pence_to_pounds(amount)
-    return "£#{amount.to_f / 100}"
+    return "#{amount.to_f / 100}"
   end
 
   def Transaction.all()
