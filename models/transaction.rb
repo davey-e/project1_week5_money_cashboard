@@ -53,10 +53,18 @@ class Transaction
 
   def Transaction.all_by_tag(tag_id)
     sql = "SELECT * FROM transactions
-    WHERE tag_id = $1"
+    WHERE tag_id = $1;"
     values = [tag_id]
     results = SqlRunner.run(sql, values)
     return results.map{|transaction| Transaction.new(transaction)}
+  end
+
+  def Transaction.total_by_tag(tag_id)
+    sql = "SELECT sum(amount) FROM transactions
+    WHERE tag_id = $1;"
+    values = [tag_id]
+    result = SqlRunner.run(sql, values).first()
+    return result['sum'].to_i
   end
 
   def Transaction.delete_all()
