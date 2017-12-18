@@ -1,0 +1,60 @@
+body{
+
+}
+
+header {
+  background-color: #0B3C5D;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  color: white;
+  padding: 20px;
+  z-index: 2;
+}
+
+header a {
+  font-family: arial;
+  font-size: 20px;
+}
+header a:visited {
+  color: white;
+}
+
+nav {
+  background-color: #328CC1;
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  height: 40px;
+  padding: 20px;
+  z-index: 1;
+}
+
+main {
+  position: absolute;
+  top: 160px;
+  width: 100%;
+  padding: 20px;
+
+}
+
+h2 {
+  font-family: arial;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+a, a:visited, a:hover {
+  font-family: arial;
+  text-decoration: none;
+}
+
+a, a:visited {
+    color: #0B3C5D;
+}
+
+a:hover {
+  color: white;
+}

@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Money Cashboard</title>
-  </head>
-  <body>
-    <h1>Money Cashboard</h1>
-
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/tables.css">
+  <title>Money Cashboard</title>
+</head>
+<body>
+  <header>
+    <a href="/transactions">Money Cashboard</a>
+  </header>
+  <nav>
+    <a href="/transactions/new">New Transaction</a>
+  </nav>
+  <main>
     <%= yield %>
-
-  </body>
+  </main>
+</body>
 </html>
