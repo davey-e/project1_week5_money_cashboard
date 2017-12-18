@@ -1,8 +1,10 @@
 <h2>All Transactions</h2>
 <% @transactions.each do |transaction| %>
+<% tag = transaction.tag() %>
+<% vendor = transaction.vendor() %>
 
 <p>Amount: <%= transaction.amount %></p>
-<p>Tag: <%= transaction.tag_id %></p>
-<p>Vendor: <%= transaction.vendor_id %></p>
+<p>Tag: <%= tag.name %></p>
+<p>Vendor: <%= vendor.name %></p>
 
 <% end %>
