@@ -1,7 +1,9 @@
-require('pry-byebug')
+require('sinatra')
+require('sinatra/contrib/all')
 require_relative('./models/tag.rb')
 require_relative('./models/vendor.rb')
 require_relative('./models/transaction.rb')
 
-binding.pry
-nil
+get '/' do
+  erb(:index)
+end
