@@ -11,6 +11,12 @@ get('/transactions') do
   erb(:"transactions/index")
 end
 
+get('/transactions/:tag_id') do
+  @transactions = Transaction.all_by_tag(params[:tag_id])
+  @transactions_total = Transaction.total_by_tag(params[:tag_id])
+  erb(:"transactions/index")
+end
+
 get('/transactions/new') do
   @tags = Tag.all()
   @vendors = Vendor.all()
