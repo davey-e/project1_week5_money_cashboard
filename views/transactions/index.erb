@@ -2,5 +2,7 @@
 <% @transactions.each do |transaction| %>
 
 <p>Amount: <%= transaction.amount %></p>
+<p>Tag: <%= transaction.tag_id %></p>
+<p>Vendor: <%= transaction.vendor_id %></p>
 
 <% end %>
