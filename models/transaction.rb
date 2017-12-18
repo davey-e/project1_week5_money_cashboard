@@ -45,15 +45,23 @@ class Transaction
     return results.map{|transaction| Transaction.new(transaction)}
   end
 
-  def Transaction.delete_all()
-    sql = "DELETE FROM transactions;"
-    SqlRunner.run (sql)
-  end
-
   def Transaction.total()
     sql = "SELECT SUM(amount) FROM transactions;"
     result = SqlRunner.run(sql).first()
     return result['sum'].to_i
+  end
+
+  def Transaction.all_by_tag(tag_id)
+    sql = "SELECT * FROM transactions
+    WHERE tag_id = $1"
+    values = [tag_id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|transaction| Transaction.new(transaction)}
+  end
+
+  def Transaction.delete_all()
+    sql = "DELETE FROM transactions;"
+    SqlRunner.run (sql)
   end
 
 end
