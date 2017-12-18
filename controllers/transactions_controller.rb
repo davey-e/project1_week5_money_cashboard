@@ -6,6 +6,7 @@ require_relative('../models/vendor.rb')
 
 
 get('/transactions') do
+  @tags = Tag.all()
   @transactions = Transaction.all()
   @transactions_total = Transaction.total()
   erb(:"transactions/index")
@@ -24,6 +25,7 @@ post('/transactions') do
 end
 
 get('/transactions/:tag_id') do
+  @tags = Tag.all()
   @transactions = Transaction.all_by_tag(params[:tag_id])
   @transactions_total = Transaction.total_by_tag(params[:tag_id])
   erb(:"transactions/index")

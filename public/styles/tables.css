@@ -1,4 +1,8 @@
-th{
+table {
+  border: 1px;
+}
+
+th {
   padding: 10px;
   text-align: left;
   font-weight: bold;

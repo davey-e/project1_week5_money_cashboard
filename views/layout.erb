@@ -12,10 +12,19 @@
     <a href="/transactions">Money Cashboard</a>
   </header>
   <nav>
-    <a href="/transactions/new">New Transaction</a>
+    <p><a href="/transactions">All Transactions</a></p>
+    <br>
+    <p>Transactions by Tag:</p>
+    <br>
+    <% @tags.each do |tag| %>
+    <p><a href="/transactions/<%= tag.id %>"><%= tag.name %></a></p>
+    <% end %>
   </nav>
   <main>
     <%= yield %>
   </main>
+  <div id="navbottom">
+    <a href="/transactions/new">New Transaction</a>
+  </div>
 </body>
 </html>
