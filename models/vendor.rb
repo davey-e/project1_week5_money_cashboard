@@ -21,6 +21,12 @@ class Vendor
     @id = result['id'].to_i
   end
 
+  def Vendor.all()
+    sql = "SELECT * FROM vendors;"
+    results = SqlRunner.run(sql)
+    return results.map{|vendor| Vendor.new(vendor)}
+  end
+
   def Vendor.delete_all()
     sql = "DELETE FROM vendors;"
     SqlRunner.run (sql)
