@@ -1,0 +1,23 @@
+<h2>New Transaction</h2>
+
+<form action="/transactions" method="post">
+  <label for="amount">Amount: </label>
+  <input type="number" id = "amount" name="amount" value="">
+
+  <label for="tag_id">Tag: </label>
+  <select name="tag_id" id="tag_id">
+    <% @tags.each do |tag|%>
+    <option value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+
+  <label for="vendor_id">Vendor: </label>
+  <select name="vendor_id" id="vendor_id">
+    <% @vendors.each do |vendor|%>
+    <option value="<%= vendor.id %>"><%= vendor.name %></option>
+    <% end %>
+  </select>
+
+  <input type='submit' value="Submit">
+
+</form>
