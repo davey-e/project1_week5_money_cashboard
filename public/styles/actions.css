@@ -3,7 +3,7 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
-input[type="submit"], nav a, nav a:visited, #navbottom a, #navbottom a:visited, #button a:visited{
+input[type="submit"], a, a:visited{
     color: #0B3C5D;
 }
 
