@@ -1,0 +1,35 @@
+<h2>Edit Transaction</h2>
+<form action="/transactions/<%= @transaction.id %>" method="post">
+
+<table>
+  <tbody>
+    <tr>
+      <td><label for="amount">Amount </label></td>
+      <td><input type="number" id = "amount" name="amount" value="<%= @transaction.amount %>"></td>
+    </tr>
+    <tr>
+      <td><label for="tag_id">Tag: </label></td>
+      <td>
+        <select name="tag_id" id="tag_id">
+          <% @tags.each do |tag|%>
+          <option value="<%= tag.id %>"><%= tag.name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="vendor_id">Vendor: </label></td>
+      <td>
+        <select name="vendor_id" id="vendor_id">
+          <% @vendors.each do |vendor|%>
+          <option value="<%= vendor.id %>"><%= vendor.name %></option>
+          <% end %>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><input type='submit' value="Submit"></p>
+
+</form>
