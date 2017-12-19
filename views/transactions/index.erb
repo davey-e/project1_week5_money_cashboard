@@ -18,7 +18,7 @@
     <% tag = transaction.tag() %>
     <% vendor = transaction.vendor() %>
     <tr>
-      <td>£<%= amount %></td>
+      <td> <a href="/transactions/<%= transaction.id %>">£<%= amount %></a></td>
       <td><%= tag.name %></td>
       <td><%= vendor.name %></td>
     </tr>

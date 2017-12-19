@@ -24,9 +24,15 @@ post('/transactions') do
   redirect to('/transactions')
 end
 
-get('/transactions/:tag_id') do
+get('/transactions/tag/:id') do
   @tags = Tag.all()
-  @transactions = Transaction.all_by_tag(params[:tag_id])
-  @transactions_total = Transaction.total_by_tag(params[:tag_id])
+  @transactions = Transaction.all_by_tag(params[:id])
+  @transactions_total = Transaction.total_by_tag(params[:id])
   erb(:"transactions/index")
+end
+
+get('/transactions/:id') do
+  @tags = Tag.all()
+  @transaction = Transaction.find(params[:id])
+  erb(:"transactions/show")
 end
