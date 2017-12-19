@@ -46,7 +46,7 @@ nav {
 
 main {
   position: fixed;
-  top: 80px;
+  top: 62px;
   /* height: 100%; */
   /* display:block; overflow:auto; */
   padding-left:250px;
@@ -55,8 +55,9 @@ main {
 }
 
 #panelhead {
+  padding-top: 20px;
   position: fixed;
-  top: 80px;
+  top: 62px;
   height: 100px;
   background-color: white;
   width: 100%;
@@ -65,7 +66,7 @@ main {
 
 #panelmain {
   position: relative;
-  top: 100px;
+  top: 120px;
   z-index: 0;
 }
 
