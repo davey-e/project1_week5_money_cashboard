@@ -3,7 +3,7 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
-input[type="submit"], nav a, nav a:visited, #navbottom a, #navbottom a:visited {
+input[type="submit"], nav a, nav a:visited, #navbottom a, #navbottom a:visited, #button a:visited{
     color: #0B3C5D;
 }
 
@@ -16,11 +16,11 @@ nav a:hover, #navbottom a:hover {
   background: white;
 }
 
-input:hover[type="submit"]{
+input:hover[type="submit"], #button a:hover{
   background: #328CC1;
 }
 
-input[type="submit"], nav a, #navbottom a {
+input[type="submit"], nav a, #navbottom a, #button a {
   padding: 5px;
   border: 1px solid #0B3C5D;
   border-radius: 6px;
@@ -31,6 +31,6 @@ nav a, #navbottom a {
   background: #328CC1;
 }
 
-input[type="submit"]{
+input[type="submit"], #button a{
   background: white;
 }
