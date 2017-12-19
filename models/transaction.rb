@@ -39,6 +39,14 @@ class Transaction
     return Vendor.new(result)
   end
 
+  def find()
+    sql = "SELECT * FROM transactions
+    WHERE id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    return Transaction.new(result)
+  end
+
   def Transaction.amount_pence_to_pounds(amount)
     return "#{amount.to_f / 100}"
   end
