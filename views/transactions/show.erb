@@ -1,19 +1,20 @@
 <% amount = Transaction.amount_pence_to_pounds(@transaction.amount) %>
 <% tag = @transaction.tag() %>
 <% vendor = @transaction.vendor() %>
-
+<div id="plaintable">
+<h2>Transaction Details</h2>
 <table>
   <tbody>
     <tr>
-      <td>Amount</td>
+      <td>Amount: </td>
       <td>£<%= amount %></td>
     </tr>
     <tr>
-      <td>Tag</td>
+      <td>Tag: </td>
       <td><%= tag.name %></td>
     </tr>
     <tr>
-      <td>Vendor</td>
+      <td>Vendor: </td>
       <td><%= vendor.name %></td>
     </tr>
   </tbody>
@@ -24,3 +25,4 @@
 </form>
 
 <a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a>
+</div>

@@ -2,8 +2,7 @@
 <h2>All Transactions</h2>
 <br>
 <p>Total: £<%= Transaction.amount_pence_to_pounds(@transactions_total) %></p>
-</div>
-<div id="panelmain">
+<br>
 <table>
   <thead>
     <tr>
@@ -12,6 +11,10 @@
       <th>Vendor</th>
     </tr>
   </thead>
+</table>
+</div>
+<div id="panelmain">
+<table>
   <tbody>
     <% @transactions.each do |transaction| %>
     <% amount = Transaction.amount_pence_to_pounds(transaction.amount) %>

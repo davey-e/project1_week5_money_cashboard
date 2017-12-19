@@ -1,10 +1,11 @@
+<div id="plaintable">
 <h2>Edit Transaction</h2>
 <form action="/transactions/<%= @transaction.id %>" method="post">
 
 <table>
   <tbody>
     <tr>
-      <td><label for="amount">Amount </label></td>
+      <td><label for="amount">Amount: </label></td>
       <td><input type="number" id = "amount" name="amount" value="<%= @transaction.amount %>"></td>
     </tr>
     <tr>
@@ -29,7 +30,6 @@
     </tr>
   </tbody>
 </table>
-
 <p><input type='submit' value="Submit"></p>
-
 </form>
+</div>
