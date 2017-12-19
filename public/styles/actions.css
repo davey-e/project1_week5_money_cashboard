@@ -3,22 +3,34 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
-nav a, nav a:visited, #navbottom a, #navbottom a:visited {
+input[type="submit"], nav a, nav a:visited, #navbottom a, #navbottom a:visited {
     color: #0B3C5D;
 }
 
-nav a:hover, #navbottom a:hover {
-  color: white;
-  background: white;
+input:hover[type="submit"], nav a:hover, #navbottom a:hover {
   border: 1px solid #0B3C5D;
   color: #0B3C5D;
 }
 
-nav a, #navbottom a  {
-  padding: 5px;
+nav a:hover, #navbottom a:hover {
+  background: white;
+}
+
+input:hover[type="submit"]{
   background: #328CC1;
-  color: white;
+}
+
+input[type="submit"], nav a, #navbottom a {
+  padding: 5px;
   border: 1px solid #0B3C5D;
   border-radius: 6px;
   font-size: 18px;
+}
+
+nav a, #navbottom a {
+  background: #328CC1;
+}
+
+input[type="submit"]{
+  background: white;
 }
