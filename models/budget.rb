@@ -3,7 +3,8 @@ require_relative('../db/sql_runner.rb')
 
 class Budget
 
-  attr_reader :id, :amount
+  attr_reader :id
+  attr_accessor :amount
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -20,6 +21,15 @@ class Budget
     values = [@amount]
     result = SqlRunner.run(sql, values).first()
     @id = result['id'].to_i
+  end
+
+  def update()
+    @amount = amount_pounds_to_pence()
+    sql = "UPDATE budget
+    SET amount = $1
+    WHERE id = $2"
+    values = [@amount, @id]
+    SqlRunner.run(sql, values)
   end
 
   # Helper methods
