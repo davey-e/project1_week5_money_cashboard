@@ -37,6 +37,14 @@ class Budget
     SqlRunner.run (sql)
   end
 
+  def Budget.find(id)
+    sql = "SELECT * FROM budget
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first()
+    return Budget.new(result)
+  end
+
   # Helper methods
   def amount_pence_to_pounds()
     return @amount.to_f / 100
