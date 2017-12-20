@@ -32,6 +32,11 @@ class Budget
     SqlRunner.run(sql, values)
   end
 
+  def Budget.delete_all()
+    sql = "DELETE FROM budget"
+    SqlRunner.run (sql)
+  end
+
   # Helper methods
   def amount_pence_to_pounds()
     return @amount.to_f / 100
