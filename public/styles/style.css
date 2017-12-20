@@ -1,5 +1,5 @@
 body{
-  display: block;
+  /* display: block; */
 }
 
 header {
@@ -41,7 +41,7 @@ nav {
 
 #navbottom {
   bottom: 0;
-  height: 20%
+  height: 20%;
 }
 
 main {
@@ -68,6 +68,20 @@ main {
   position: relative;
   top: 120px;
   z-index: 0;
+}
+
+#container {
+  display: flex;
+}
+
+#total {
+  width: 15%;
+  float: left;
+}
+
+#warning {
+  color: red;
+  font-family: arial;
 }
 
 h1 {

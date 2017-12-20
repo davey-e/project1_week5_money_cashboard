@@ -1,7 +1,14 @@
 <div id="panelhead">
 <h2><%= "All Transactions" if !@tag%><%= @tag if @tag %></h2>
 <br>
-<p>Total: £<%= "#{(@transactions_total / 100).to_f}" %></p>
+<div id="container">
+<div id="total">
+  <p>Total: £<%= "#{(@transactions_total / 100).to_f}" %></p>
+</div>
+<div id="warning">
+  <%= "Warning: Total for all transactions is over budget limit!" if !@tag && (@transactions_total/100) > 200 %>
+</div>
+</div>
 <br>
 <table>
   <thead>
