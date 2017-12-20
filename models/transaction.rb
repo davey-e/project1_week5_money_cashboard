@@ -8,12 +8,13 @@ class Transaction
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @amount = options['amount'].to_i
+    @amount = options['amount'].to_f
     @tag_id = options['tag_id'].to_i
     @vendor_id = options['vendor_id'].to_i
   end
 
   def save()
+    @amount = amount_pounds_to_pence()
     sql = "INSERT INTO transactions
     (amount, tag_id, vendor_id)
     VALUES
@@ -64,10 +65,6 @@ class Transaction
     return Transaction.new(result)
   end
 
-  def Transaction.amount_pence_to_pounds(amount)
-    return "#{amount.to_f / 100}"
-  end
-
   def Transaction.all()
     sql = "SELECT * FROM transactions;"
     results = SqlRunner.run(sql)
@@ -106,6 +103,16 @@ class Transaction
     WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
+  end
+
+  # Helper methods
+
+  def amount_pence_to_pounds()
+    return @amount.to_f / 100
+  end
+
+  def amount_pounds_to_pence()
+    return (@amount * 100).to_i
   end
 
 end
