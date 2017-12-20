@@ -15,6 +15,7 @@ CREATE TABLE vendors(
 
 CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
+  transaction_date DATE NOT NULL,
   amount INT4 NOT NULL,
   tag_id INT4 REFERENCES tags(id),
   vendor_id INT4 REFERENCES vendors(id)

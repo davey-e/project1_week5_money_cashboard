@@ -10,13 +10,19 @@ class TestTransaction < MiniTest::Test
   def setup()
     @tag1 = Tag.new({"id" => 1, "name" => "Clothes"})
     @vendor1 = Vendor.new({"id" => 1, "name" => "Tesco"})
-    @transaction1 = Transaction.new({"id" => 1, "amount" => 2000, "tag_id" => @tag1.id, "vendor_id" => @vendor1.id})
-    @transaction2 = Transaction.new({"id" => 1, "amount" => 20.00, "tag_id" => @tag1.id, "vendor_id" => @vendor1.id})
+    @transaction1 = Transaction.new({"id" => 1, "transaction_date" => "29/11/2017", "amount" => 2000, "tag_id" => @tag1.id, "vendor_id" => @vendor1.id})
+    @transaction2 = Transaction.new({"id" => 1, "transaction_date" => "29/11/2017", "amount" => 20.00, "tag_id" => @tag1.id, "vendor_id" => @vendor1.id})
   end
 
   def test_transaction_has_id()
     expected = 1
     actual = @transaction1.id
+    assert_equal(expected, actual)
+  end
+
+  def test_transaction_has_date()
+    expected = '29/11/2017'
+    actual = @transaction1.transaction_date
     assert_equal(expected, actual)
   end
 
