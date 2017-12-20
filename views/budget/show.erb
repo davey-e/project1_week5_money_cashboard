@@ -1,0 +1,20 @@
+<div id="panelhead">
+<h2>Budget Details</h2>
+  <br>
+</div>
+<div id="panelmain">
+<div id="plaintable">
+<table>
+  <tbody>
+    <tr>
+      <td>Amount: </td>
+      <td>£<%= @budget.amount_pence_to_pounds() %></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<div id="button">
+  <a href="/budget/<%= @budget.id %>/edit">Edit Budget Amount</a>
+</div>
+</div>
+</div>
