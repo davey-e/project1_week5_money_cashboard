@@ -1,7 +1,7 @@
 DROP TABLE transactions CASCADE;
 DROP TABLE tags CASCADE;
 DROP TABLE vendors CASCADE;
-DROP TABLE budget_limit;
+DROP TABLE budget;
 
 CREATE TABLE tags(
   id SERIAL4 PRIMARY KEY,
@@ -20,7 +20,7 @@ CREATE TABLE transactions(
   vendor_id INT4 REFERENCES vendors(id)
 );
 
-CREATE TABLE budget_limit(
+CREATE TABLE budget(
   id SERIAL4 PRIMARY KEY,
   amount INT4 NOT NULL
 )
