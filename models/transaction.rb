@@ -50,6 +50,7 @@ class Transaction
   end
 
   def update()
+    @amount = amount_pounds_to_pence()
     sql = "UPDATE transactions
     SET(amount, tag_id, vendor_id) = ($1, $2, $3)
     WHERE id = $4"
