@@ -8,6 +8,10 @@
 <table>
   <tbody>
     <tr>
+      <td>Date: </td>
+      <td><%= @transaction.transaction_date %></td>
+    </tr>
+    <tr>
       <td>Amount: </td>
       <td>£<%= @transaction.amount_pence_to_pounds() %></td>
     </tr>
