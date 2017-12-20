@@ -6,7 +6,7 @@
   <tbody>
     <tr>
       <td><label for="amount">Amount: </label></td>
-      <td><input type="number" id = "amount" name="amount" value="<%= @transaction.amount %>"></td>
+      <td><input type="number" id = "amount" name="amount" value="<%= @transaction.amount_pence_to_pounds() %>"></td>
     </tr>
     <tr>
       <td><label for="tag_id">Tag: </label></td>
