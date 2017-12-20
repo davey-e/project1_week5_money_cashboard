@@ -3,12 +3,13 @@ require('sinatra/contrib/all')
 require_relative('../models/transaction.rb')
 require_relative('../models/tag.rb')
 require_relative('../models/vendor.rb')
-
+require_relative('../models/budget.rb')
 
 get('/transactions') do
   @tags = Tag.all()
   @transactions = Transaction.all()
   @transactions_total = Transaction.total()
+  @budget = Budget.find(1)
   erb(:"transactions/index")
 end
 

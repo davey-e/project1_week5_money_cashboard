@@ -6,7 +6,7 @@
   <p>Total: £<%= "#{(@transactions_total / 100).to_f}" %></p>
 </div>
 <div id="warning">
-  <%= "Warning: Total for all transactions is over budget limit!" if !@tag && (@transactions_total/100) > 200 %>
+  <%= "Warning: Total for all transactions is over budget amount!" if !@tag && @transactions_total > @budget.amount %>
 </div>
 </div>
 <br>
