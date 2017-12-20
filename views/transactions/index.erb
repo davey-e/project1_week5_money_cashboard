@@ -1,5 +1,5 @@
 <div id="panelhead">
-<h2>All Transactions</h2>
+<h2><%= "All Transactions" if !@tag%><%= @tag if @tag %></h2>
 <br>
 <p>Total: £<%= "#{(@transactions_total / 100).to_f}" %></p>
 <br>
