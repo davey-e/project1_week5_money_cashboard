@@ -1,7 +1,11 @@
+<div id="panelhead">
+  <h2>Edit Transaction</h2>
+  <br>
+  <!-- <p>Please enter a name for the new vendor</p> -->
+</div>
+<div id="panelmain">
 <div id="plaintable">
-<h2>Edit Transaction</h2>
 <form action="/transactions/<%= @transaction.id %>" method="post">
-
 <table>
   <tbody>
     <tr>
@@ -32,4 +36,5 @@
 </table>
 <p><input type='submit' value="Submit"></p>
 </form>
+</div>
 </div>
