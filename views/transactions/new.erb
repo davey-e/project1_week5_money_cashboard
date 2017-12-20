@@ -8,6 +8,10 @@
 <form action="/transactions" method="post">
 <table>
   <tr>
+    <td><label for="transaction_date">Date: </label></td>
+    <td> <input type="date" id="transaction_date" name="transaction_date" value=""> </td>
+  </tr>
+  <tr>
     <td><label for="amount">Amount: </label></td>
     <td><input type="number" min="0" placeholder="0.00" step="0.01" id = "amount" name="amount" value=""></td>
   </tr>
