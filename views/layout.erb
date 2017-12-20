@@ -10,7 +10,12 @@
 </head>
 <body>
   <header>
-    <h1>Money Cashboard</h1>
+    <div id="heading">
+      <h1>Money Cashboard</h1>
+    </div>
+    <div id="header_total" <%="style='color: red'" if Transaction.total() > Budget.find(1).amount %> >
+    £<%= (Transaction.total() /100).to_f %>
+    </div>
   </header>
   <nav>
     <p><a href="/transactions">All Transactions</a></p>
