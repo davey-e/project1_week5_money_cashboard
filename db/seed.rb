@@ -2,10 +2,15 @@ require('pry-byebug')
 require_relative('../models/tag.rb')
 require_relative('../models/vendor.rb')
 require_relative('../models/transaction.rb')
+require_relative('../models/budget.rb')
+
 
 Transaction.delete_all()
 Tag.delete_all()
 Vendor.delete_all()
+
+budget1 = Budget.new({'amount' => '1000.00'})
+budget1.save()
 
 tag1 = Tag.new({'name' => 'Clothes'})
 tag1.save()
