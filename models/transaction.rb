@@ -68,7 +68,8 @@ class Transaction
   end
 
   def Transaction.all()
-    sql = "SELECT * FROM transactions;"
+    sql = "SELECT * FROM transactions
+    ORDER BY transaction_date desc;"
     results = SqlRunner.run(sql)
     return results.map{|transaction| Transaction.new(transaction)}
   end
@@ -81,7 +82,8 @@ class Transaction
 
   def Transaction.all_by_tag(tag_id)
     sql = "SELECT * FROM transactions
-    WHERE tag_id = $1;"
+    WHERE tag_id = $1
+    ORDER BY transaction_date desc;;"
     values = [tag_id]
     results = SqlRunner.run(sql, values)
     return results.map{|transaction| Transaction.new(transaction)}
