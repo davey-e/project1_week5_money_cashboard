@@ -22,7 +22,8 @@ class Vendor
   end
 
   def Vendor.all()
-    sql = "SELECT * FROM vendors;"
+    sql = "SELECT * FROM vendors
+    ORDER BY name asc;"
     results = SqlRunner.run(sql)
     return results.map{|vendor| Vendor.new(vendor)}
   end
