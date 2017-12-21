@@ -9,7 +9,7 @@ get('/transactions') do
   @tags = Tag.all()
   @transactions = Transaction.all()
   @transactions_total = Transaction.total()
-  @budget = Budget.find(1)
+  @budget = Budget.all.first()
   erb(:"transactions/index")
 end
 

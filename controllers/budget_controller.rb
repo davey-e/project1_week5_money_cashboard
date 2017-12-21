@@ -18,5 +18,5 @@ end
 post('/budget/:id') do
   budget = Budget.new(params)
   budget.update()
-  redirect to("/budget/1")
+  redirect to("/budget/#{budget.id}")
 end
