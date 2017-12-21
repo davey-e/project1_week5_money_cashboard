@@ -18,7 +18,7 @@
       <h1>Money Cashboard</h1>
     </div>
     <div id="header_total" <%="style='color: red'" if Transaction.total() > Budget.all.first.amount %> >
-    £<%= (Transaction.total() /100).to_f %>
+    £<%= "%0.2f" % (Transaction.total.to_f() /100) %>
     </div>
   </header>
   <nav>
