@@ -27,7 +27,7 @@
   <tbody>
     <% @transactions.each do |transaction| %>
     <tr>
-      <td> <%= transaction.transaction_date %></td>
+      <td> <%= transaction.format_date %></td>
       <td> £<%= transaction.amount_pence_to_pounds() %></td>
       <td><%= transaction.tag.name %></td>
       <td><%= transaction.vendor.name %></td>

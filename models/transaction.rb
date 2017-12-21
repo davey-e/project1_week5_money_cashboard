@@ -1,4 +1,5 @@
 require('pry-byebug')
+require('date')
 require_relative('../db/sql_runner')
 
 class Transaction
@@ -8,7 +9,7 @@ class Transaction
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
-    @transaction_date = options['transaction_date']
+    @transaction_date = Date.parse(options['transaction_date'])
     @amount = options['amount'].to_f
     @tag_id = options['tag_id'].to_i
     @vendor_id = options['vendor_id'].to_i
@@ -117,6 +118,10 @@ class Transaction
 
   def amount_pounds_to_pence()
     return (@amount * 100).to_i
+  end
+
+  def format_date()
+    return @transaction_date.strftime("%d/%m/%Y")
   end
 
 end
