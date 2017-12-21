@@ -45,6 +45,12 @@ class Budget
     return Budget.new(result)
   end
 
+  def Budget.all()
+    sql = "SELECT * FROM budget"
+    result = SqlRunner.run(sql)
+    return result.map{|budget|Budget.new(budget)}
+  end
+
   # Helper methods
   def amount_pence_to_pounds()
     return @amount.to_f / 100
