@@ -54,9 +54,9 @@ class Transaction
   def update()
     @amount = amount_pounds_to_pence()
     sql = "UPDATE transactions
-    SET(amount, tag_id, vendor_id) = ($1, $2, $3)
-    WHERE id = $4"
-    values = [@amount, @tag_id, @vendor_id, @id]
+    SET(transaction_date, amount, tag_id, vendor_id) = ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@transaction_date, @amount, @tag_id, @vendor_id, @id]
     SqlRunner.run(sql, values)
   end
 
