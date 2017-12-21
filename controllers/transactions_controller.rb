@@ -7,15 +7,16 @@ require_relative('../models/budget.rb')
 
 get('/transactions') do
   @tags = Tag.all()
+  @budget = Budget.all.first()
   @transactions = Transaction.all()
   @transactions_total = Transaction.total()
-  @budget = Budget.all.first()
   erb(:"transactions/index")
 end
 
 get('/transactions/new') do
   @tags = Tag.all()
   @vendors = Vendor.all()
+  @budget = Budget.all.first()
   erb(:"transactions/new")
 end
 
@@ -27,6 +28,7 @@ end
 
 get('/transactions/tag/:id') do
   @tags = Tag.all()
+  @budget = Budget.all.first()
   @tag = Tag.find(params[:id]).name
   @transactions = Transaction.all_by_tag(params[:id])
   @transactions_total = Transaction.total_by_tag(params[:id])
@@ -35,6 +37,7 @@ end
 
 get('/transactions/:id') do
   @tags = Tag.all()
+  @budget = Budget.all.first()
   @transaction = Transaction.find(params[:id])
   erb(:"transactions/show")
 end
@@ -47,6 +50,7 @@ end
 get('/transactions/:id/edit') do
   @tags = Tag.all()
   @vendors = Vendor.all()
+  @budget = Budget.all.first()
   @transaction = Transaction.find(params[:id])
   erb(:"transactions/edit")
 end

@@ -5,6 +5,7 @@ require_relative('../models/vendor.rb')
 
 get('/vendors/new') do
   @tags = Tag.all()
+  @budget = Budget.all.first()
   erb(:"vendors/new")
 end
 

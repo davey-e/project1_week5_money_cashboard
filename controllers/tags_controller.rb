@@ -4,6 +4,7 @@ require_relative('../models/tag.rb')
 
 get('/tags/new') do
   @tags = Tag.all()
+  @budget = Budget.all.first()
   erb(:"tags/new")
 end
 
