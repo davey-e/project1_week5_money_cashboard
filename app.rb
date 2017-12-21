@@ -11,6 +11,5 @@ require_relative('./controllers/vendors_controller.rb')
 require_relative('./controllers/budget_controller.rb')
 
 get '/' do
-  @tags = Tag.all()
-  erb(:index)
+  redirect to("/transactions")
 end
