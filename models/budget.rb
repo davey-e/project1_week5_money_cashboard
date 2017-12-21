@@ -53,7 +53,7 @@ class Budget
 
   # Helper methods
   def amount_pence_to_pounds()
-    return @amount.to_f / 100
+    return "%0.2f" % (@amount.to_f / 100)
   end
 
   def amount_pounds_to_pence()
