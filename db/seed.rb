@@ -1,4 +1,3 @@
-require('pry-byebug')
 require_relative('../models/tag.rb')
 require_relative('../models/vendor.rb')
 require_relative('../models/transaction.rb')
@@ -165,6 +164,3 @@ transaction20 = Transaction.new({
   'tag_id' => tag4.id,
   'vendor_id' => vendor7.id})
 transaction20.save()
-
-binding.pry
-nil
